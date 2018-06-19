@@ -32,8 +32,9 @@ if ($isManager) {
             'id',
             'title',
             'scheduled_time',
-            'address',
-            'phone',
+            'customer.first_name',
+            'address.street',
+            'customer.phone',
             [
                     'class' => 'yii\grid\ActionColumn',
                     'template' => $tpl

@@ -28,8 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'scheduled_time',
             'title',
             'description:ntext',
-            'address',
-            'phone',
+            'address.street',
+            'address.house',
+            'customer.phone',
             'price',
         ],
     ]) ?>

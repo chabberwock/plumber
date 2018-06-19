@@ -24,9 +24,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'customer_id')->dropDownList(\app\helpers\Data::customers()) ?>
 
-    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'address_id')->dropDownList(\app\helpers\Data::addresses()) ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 

@@ -35,10 +35,10 @@ class Task extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['office_id', 'manager_id', 'worker_id', 'status'], 'integer'],
+            [['office_id', 'manager_id', 'worker_id', 'customer_id', 'address_id', 'status'], 'integer'],
             [['scheduled_time'], 'safe'],
             [['description'], 'string'],
-            [['title', 'address', 'phone', 'price'], 'string', 'max' => 100],
+            [['title', 'price'], 'string', 'max' => 100],
         ];
     }
     
@@ -57,6 +57,16 @@ class Task extends \yii\db\ActiveRecord
         return $this->hasOne(Office::class, ['id'=>'office_id']);
     }
     
+    public function getCustomer()
+    {
+        return $this->hasOne(Customer::class, ['id'=>'customer_id']);
+    }
+
+    public function getAddress()
+    {
+        return $this->hasOne(Address::class, ['id'=>'address_id']);
+    }
+    
 
     /**
      * {@inheritdoc}
@@ -71,8 +81,6 @@ class Task extends \yii\db\ActiveRecord
             'scheduled_time' => 'Scheduled Time',
             'title' => 'Title',
             'description' => 'Description',
-            'address' => 'Address',
-            'phone' => 'Phone',
             'price' => 'Price',
             'status' => 'Status',
         ];
