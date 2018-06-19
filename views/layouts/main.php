@@ -27,6 +27,10 @@ if (!Yii::$app->user->isGuest) {
         case 'john@plumber.co':
             $menu[] = ['label' => 'My Tasks', 'url' => ['/task']];
             break;
+        case 'admin@example.com':
+            $menu[] = ['label' => 'Accounts', 'url' => ['/account']];
+            $menu[] = ['label' => 'Offices', 'url' => ['/office']];
+            break;
     }
 }
 
